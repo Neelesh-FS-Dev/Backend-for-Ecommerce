@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node -e \"require('./models'); require('./config/database').sync().then(() => { console.log('Database synced'); process.exit(0); })\""
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.16.3",
     "razorpay": "^2.9.6",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

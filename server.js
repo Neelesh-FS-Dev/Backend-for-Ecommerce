@@ -5,10 +5,20 @@ const sequelize = require("./config/database");
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/products");
 const orderRoutes = require("./routes/orders");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3003;
-
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:8081",
+      "https://c168a0547bf7.ngrok-free.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("Hello, World!"));

@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Register
 router.post("/register/", async (req, res) => {
-  res.status(200).json({ message: "Register endpoint hit" });
+  // res.status(200).json({ message: "Register endpoint hit" });
   try {
     const { name, email, password } = req.body;
 
@@ -25,7 +25,7 @@ router.post("/register/", async (req, res) => {
       expiresIn: "7d",
     });
 
-    res.status(201).json({
+    res.status(200).json({
       token,
       user: {
         id: user.id,

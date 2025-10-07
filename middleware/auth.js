@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const { User } = require("../models");
+const crypto = require("crypto");
+const JWT_SECRET = crypto.randomBytes(32).toString("hex");
 
-const JWT_SECRET = "your-secret-key";
+console.log(JWT_SECRET);
 
 const auth = async (req, res, next) => {
   try {
